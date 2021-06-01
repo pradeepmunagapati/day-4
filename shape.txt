@@ -1,0 +1,103 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Day_4
+{
+    class location
+    {
+        double x, y;
+    }
+    class shape
+    {
+        double location;
+        double ae, peri;
+        public override string Tostring()
+        {
+            return string.Empty;
+        }
+        public double Area()
+        {
+            return 0;
+        }
+        public double perimeter()
+        {
+            return 0;
+        }
+    }
+    class rectangle:shape
+    {
+        double s1, s2, a, p;
+        public double side1()
+        {
+            Console.WriteLine("enter side1");
+            s1 = Convert.ToInt32(Console.ReadLine());
+            return s1;
+        }
+        public double side2()
+        {
+            Console.WriteLine("enter side2");
+            s2 = Convert.ToInt32(Console.ReadLine());
+            return s2;
+        }
+        new public double Area()
+        {
+            
+            return s1*s2;
+            
+        }
+        new public double perimeter()
+        {
+            p = 2*(s1+s2);
+            return p;
+
+        }
+    }
+    class circle:shape
+    {
+        double r,a,p;
+        public double radius()
+        {
+            
+            Console.WriteLine("enter radius");
+            r = Convert.ToInt32(Console.ReadLine());
+            return r;
+        }
+        new public double Area()
+        {
+            a = 2 * 3.14*r;
+            return a;
+        }
+        new public double perimeter()
+        {
+            p = 2*3.14*r*r;
+            return p;
+        }
+    }
+    
+    class Program
+    {
+        public static void Main()
+        {
+            double a, p;
+            rectangle r1 = new rectangle();
+            circle c1 = new circle();
+            r1.side1();
+            r1.side2();
+            a=r1.Area();
+            Console.WriteLine("area of rectangle is " + a);
+            p=r1.perimeter();
+            Console.WriteLine("perimeter of rectangle is " + p);
+            c1.radius();
+            a=c1.Area();
+            Console.WriteLine("area of circle is " + a);
+            p =c1.perimeter();
+            Console.WriteLine("perimeter of circle is " + p);
+            Console.ReadLine();
+        }
+    }
+}

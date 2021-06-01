@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Day_4
+{
+    class person
+    {
+        public string name;
+       public person(string name)
+       {
+            this.name = name;
+       }
+        public override string ToString()
+        {
+            return name;
+        }
+    }
+    class Student : person
+    {
+        public Student(string name) : base(name) { }
+        public void study()
+        {
+            Console.WriteLine("Student is "+ name +" studying");
+        }
+    }
+    class Teacher:person
+    {
+        public Teacher(string name) : base(name) { }
+        public void explain()
+        {
+            Console.WriteLine("Teacher is "+ name +" explaining");
+        }
+    }
+    class Program
+    {
+        public static void Main()
+        {
+            string sname, tname;
+            Console.WriteLine("enter student name");
+            sname = Console.ReadLine();
+            Console.WriteLine("enter Teacher name");
+            tname = Console.ReadLine();
+            Student s = new Student(sname);
+            Teacher t = new Teacher(tname);
+            s.study();
+            t.explain();
+            Console.ReadLine();
+        }
+    }
+}

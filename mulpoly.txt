@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day_4
+{
+    class Program
+    {
+        int a = 6, b = 7;
+        public void mul()
+        {
+            Console.WriteLine("sum is :" + (a * b));
+        }
+        public void mul(int a,int b)
+        {
+            Console.WriteLine("sum is :" + (a * b));
+        }
+        public int mul(int a,int b,int c)
+        {
+            return (a * b*c);
+        }
+        public void mul(string a,string b)
+        {
+            Console.WriteLine("sum is :" + (Convert.ToInt32(a)*Convert.ToInt32(b)));
+        }
+        public void mul(string a, string b,string c)
+        {
+            Console.WriteLine(a+b+c);
+        }
+        static void Main(string[] args)
+        {
+            Program p = new Program();
+            p.mul();
+            p.mul(1, 2);
+            Console.WriteLine(p.mul(1, 2, 3));
+            p.mul("1", "2");
+            p.mul("Hello ", "Pradeep ", "Good morning ");
+            Console.ReadLine();
+        }
+    }
+}
